@@ -18,12 +18,10 @@ function SignUp() {
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
-    phone_number: "",
     email: "",
     password: "",
-    userType: "",
   });
-  const { name, phone_number, email, password, userType } = formData;
+  const { name, email, password } = formData;
   const onChange = (e) => {
     setFormData((prevState) => ({
       ...prevState,
@@ -42,7 +40,6 @@ function SignUp() {
       const user = userCredential.user;
       updateProfile(auth.currentUser, {
         displayName: name,
-        phoneNumber: phone_number,
       });
 
       const formDataCopy = { ...formData };
@@ -59,7 +56,7 @@ function SignUp() {
     <>
       <div className="pageContainer">
         <header>
-          <p className="pageHeader">Welcome Back!</p>
+          <p className="pageHeader">Welcome!</p>
         </header>
 
         <form onSubmit={handleSubmit}>
@@ -79,7 +76,7 @@ function SignUp() {
             value={email}
             onChange={onChange}
           />
-          <input
+           {/*<input
             type="text"
             className="phoneNumberInput"
             placeholder="Phone Number"
@@ -96,7 +93,7 @@ function SignUp() {
             value={userType}
             onChange={onChange}
           />
-          {/* <select className="emailInput">
+          <select className="emailInput">
             <option>User Type(Landlord or Tenant)</option>
             <option>Tenant</option>
             <option>Landlord</option>
@@ -132,6 +129,7 @@ function SignUp() {
         <Link to="/sign-in" className="registerLink">
           Sign In Instead
         </Link>
+      <br /><br /><br />
       </div>
     </>
   );
