@@ -91,7 +91,7 @@ function Explore() {
         <p className="pageHeader">Explore</p>
       </header>
 
-      <main  style={{ marginBottom: "120px"}}>
+      <main>
         <Slider />
 
         <p className="exploreCategoryHeading">Categories</p>
