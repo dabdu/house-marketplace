@@ -29,20 +29,6 @@ function ListingItem({ property, id, onDelete, onEdit }) {
               : property.regularPrice
                   .toString()
                   .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-                  <br/>
-//             {property.offer && (
-//               <span
-//                 style={{
-//                   textDecoration: "line-through",
-//                   margin: "0px 4px",
-//                   color: "#B1FA79",
-//                 }}
-//               >
-//                 {`N${property.discountedPrice
-//                   .toString()
-//                   .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`}
-//               </span>
-//             )}
             {property.purpose === "rent" && " / Month"}
           </p>
           <div className="categoryListingInfoDiv">
