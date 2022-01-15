@@ -29,6 +29,7 @@ function ListingItem({ property, id, onDelete, onEdit }) {
               : property.regularPrice
                   .toString()
                   .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                  <br/>
             {property.offer && (
               <span
                 style={{
